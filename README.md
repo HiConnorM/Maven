@@ -78,6 +78,7 @@ Maven/
 ├── scripts/                 # Custom scripts for automation or setup
 ├── .gitignore               # Ignored files and folders
 └── README.md                # Main README with project overview
+<<<<<<< HEAD
 ```
 
 ---
@@ -170,3 +171,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 This README provides a solid foundation for documenting your project and guiding contributors. As you expand Maven, you can update this README with more features, installation details, or any new information. Let me know if there’s anything specific you’d like to add or adjust!
+=======
+>>>>>>> 11d6fe5 (Initial project setup with updated folder structure and sample backend/frontend files)
