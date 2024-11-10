@@ -1,6 +1,6 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
-import authMiddleware from './middleware/auth';
+import authMiddleware from './middlewares/auth';
 
 dotenv.config();
 
