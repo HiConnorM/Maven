@@ -1,48 +1,27 @@
-import React from "react";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Calendar as CalendarIcon, Clock } from 'lucide-react';
-import { Button } from "@/components/ui/button";
+import React from 'react';
 
 interface Appointment {
   id: number;
   client: string;
   time: string;
-  type: "Video Call" | "In-Person" | "Phone Call";
+  type: string;
 }
 
 interface AppointmentsListProps {
   appointments: Appointment[];
 }
 
-const AppointmentsList: React.FC<AppointmentsListProps> = ({ appointments }) => {
-  return (
-    <div className="space-y-4">
-      {appointments.map((appointment) => (
-        <div key={appointment.id} className="flex items-center justify-between p-2 bg-muted rounded-lg">
-          <div className="flex items-center space-x-4">
-            <Avatar>
-              <AvatarFallback>{appointment.client[0]}</AvatarFallback>
-            </Avatar>
-            <div>
-              <p className="font-medium">{appointment.client}</p>
-              <p className="text-sm text-muted-foreground">{appointment.time}</p>
-            </div>
-          </div>
-          <Badge variant={
-            appointment.type === "Video Call" ? "default" :
-            appointment.type === "In-Person" ? "secondary" :
-            "outline"
-          }>
-            {appointment.type}
-          </Badge>
+const AppointmentsList: React.FC<AppointmentsListProps> = ({ appointments }) => (
+  <ul className="space-y-2">
+    {appointments.map((appointment) => (
+      <li key={appointment.id} className="p-4 border rounded-md bg-gray-50">
+        <div className="font-medium">{appointment.client}</div>
+        <div className="text-sm text-gray-500">
+          {appointment.time} ({appointment.type})
         </div>
-      ))}
-      <Button className="w-full mt-4">
-        <CalendarIcon className="mr-2 h-4 w-4" /> View All Appointments
-      </Button>
-    </div>
-  );
-};
+      </li>
+    ))}
+  </ul>
+);
 
 export default AppointmentsList;

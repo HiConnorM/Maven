@@ -1,21 +1,38 @@
 {
-    "compilerOptions": {
-      "target": "ES6",                                // Target ECMAScript 6 for better compatibility with browsers.
-      "module": "esnext",                              // Use ESNext for modern JavaScript module syntax.
-      "jsx": "react-jsx",                              // Enable support for React JSX.
-      "strict": true,                                  // Enable all strict type-checking options.
-      "esModuleInterop": true,                         // Ease importing CommonJS modules.
-      "forceConsistentCasingInFileNames": true,        // Enforce consistent casing in imports.
-      "skipLibCheck": true,                            // Skip type-checking .d.ts files for faster compilation.
-      "moduleResolution": "node",                      // Look for modules similar to Node.js resolution.
-      "allowSyntheticDefaultImports": true,            // Allow default imports from modules with no default export.
-      "baseUrl": "./",                                 // Set base directory for imports.
-      "paths": {
-        "@/*": ["src/*"]                                 // Configure imports from the "src" directory.
-      },
-      "outDir": "./build"                              // Compiled output will go to the "build" directory.
+  "compilerOptions": {
+    "target": "ES6", // Target ECMAScript 6 for better compatibility with browsers.
+    "module": "esnext", // Use ESNext for modern JavaScript module syntax.
+    "jsx": "preserve", // Enable support for React JSX.
+    "strict": true, // Enable all strict type-checking options.
+    "esModuleInterop": true, // Ease importing CommonJS modules.
+    "forceConsistentCasingInFileNames": true, // Enforce consistent casing in imports.
+    "skipLibCheck": true, // Skip type-checking .d.ts files for faster compilation.
+    "moduleResolution": "node", // Look for modules similar to Node.js resolution.
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export.
+    "baseUrl": "./", // Set base directory for imports.
+    "paths": {
+      "@/*": [
+        "src/*"
+      ] // Configure imports from the "src" directory.
     },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "build"]
-  }
-  
+    "outDir": "./build" // Compiled output will go to the "build" directory.
+    ,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "noEmit": true,
+    "incremental": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
