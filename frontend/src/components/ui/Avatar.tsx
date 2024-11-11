@@ -1,26 +1,28 @@
 import React from 'react';
 
-// Avatar Component
-export const Avatar: React.FC<{ src?: string; alt?: string }> = ({ src, alt }) => {
+interface AvatarProps {
+  src?: string; // URL of the avatar image
+  alt?: string; // Alternative text for the image
+  fallback?: string; // Fallback initials
+  className?: string; // Optional extra classes for styling
+}
+
+const Avatar: React.FC<AvatarProps> = ({ src, alt, fallback, className }) => {
   return (
-    <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-300">
+    <div className={`w-10 h-10 rounded-full overflow-hidden ${className}`}>
       {src ? (
-        <img src={src} alt={alt} />
+        <img
+          src={src}
+          alt={alt || 'Avatar'}
+          className="w-full h-full object-cover"
+        />
       ) : (
-        <AvatarFallback>
-          {/* Providing fallback content */}
-          {alt ? alt.charAt(0) : "?"}
-        </AvatarFallback>
+        <div className="flex items-center justify-center w-full h-full bg-gray-200 text-gray-700">
+          {fallback ? fallback : 'N/A'}
+        </div>
       )}
     </div>
   );
 };
 
-// AvatarFallback Component
-export const AvatarFallback: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return (
-    <div className="w-full h-full flex items-center justify-center text-sm text-gray-700">
-      {children}
-    </div>
-  );
-};
+export default Avatar;

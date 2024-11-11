@@ -1,17 +1,7 @@
-import React from 'react';
-import MainLayout from '../components/MainLayout';
-import Dashboard from './Dashboard';
-import ErrorBoundary from '../components/ErrorBoundary';
+// src/pages/_app.tsx
+import '../../styles/globals.css'; // Import global styles
+import type { AppProps } from 'next/app';
 
-const App: React.FC = () => {
-  return (
-    <ErrorBoundary>
-      <MainLayout>
-        <Dashboard />
-      </MainLayout>
-    </ErrorBoundary>
-  );
-};
-
-export default App;
-
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}

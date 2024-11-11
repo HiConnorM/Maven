@@ -1,20 +1,12 @@
-// pages/dashboard.tsx
+// src/pages/dashboard.tsx
 import React from 'react';
-import AppointmentsList from '@/components/dashboard/AppointmentsList';
-import Card from '@/components/ui/Card';
-import { appointments } from '@/data/Appointments';
+import  DashboardLayout  from '@/layouts/DashboardLayout';
 
-const Dashboard: React.FC = () => {
+export default function Dashboard() {
   return (
-    <main className="p-6 mt-16 space-y-6">
-      <Card className="col-span-3">
-        <h2 className="font-semibold text-xl mb-4">Upcoming Appointments</h2>
-        <AppointmentsList appointments={appointments} />
-      </Card>
-
-      {/* Add other main content sections here */}
-    </main>
+    <DashboardLayout>
+      {/* Dashboard-specific cards and components */}
+      <h1>Welcome to the Dashboard</h1>
+    </DashboardLayout>
   );
-};
-
-export default Dashboard;
+}
