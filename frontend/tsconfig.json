@@ -11,7 +11,7 @@
       "allowSyntheticDefaultImports": true,            // Allow default imports from modules with no default export.
       "baseUrl": "./",                                 // Set base directory for imports.
       "paths": {
-        "*": ["src/*"]                                 // Configure imports from the "src" directory.
+        "@/*": ["src/*"]                                 // Configure imports from the "src" directory.
       },
       "outDir": "./build"                              // Compiled output will go to the "build" directory.
     },

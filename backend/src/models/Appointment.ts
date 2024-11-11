@@ -1,12 +1,17 @@
-import { DataTypes, Model } from 'sequelize';
-import sequelize from '../config/db'; // Importing the existing sequelize instance
+// Appointment.ts
+
+import { Model, DataTypes } from 'sequelize';
+import sequelize from '../config/db';
 
 class Appointment extends Model {
   public id!: number;
   public userId!: number;
-  public date!: Date;
-  public time!: string;
-  public type!: string;
+  public appointmentDate!: Date;
+  public notes!: string;
+
+  // Timestamps
+  public readonly createdAt!: Date;
+  public readonly updatedAt!: Date;
 }
 
 Appointment.init(
@@ -20,21 +25,17 @@ Appointment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    date: {
+    appointmentDate: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-    time: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    type: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    notes: {
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
   },
   {
-    sequelize, // Use the imported sequelize instance
+    sequelize,
     modelName: 'Appointment',
   }
 );

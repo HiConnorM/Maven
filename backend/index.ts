@@ -1,6 +1,7 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
-import authMiddleware from './middlewares/auth';
+import auth from './src/middlewares/auth';
+
 
 dotenv.config();
 
@@ -13,7 +14,7 @@ app.get('/', (req: Request, res: Response) => {
   res.send('API is running...');
 });
 
-app.use('/api/protected', authMiddleware, (req: Request, res: Response) => {
+app.use('/api/protected', auth, (req: Request, res: Response) => {
   res.send('This is a protected route');
 });
 
