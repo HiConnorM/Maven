@@ -3,7 +3,7 @@ import React from 'react';
 interface AvatarProps {
   src?: string; // URL of the avatar image
   alt?: string; // Alternative text for the image
-  fallback?: string; // Fallback initials
+  fallback?: React.ReactNode; // Fallback content
   className?: string; // Optional extra classes for styling
 }
 
@@ -18,11 +18,19 @@ const Avatar: React.FC<AvatarProps> = ({ src, alt, fallback, className }) => {
         />
       ) : (
         <div className="flex items-center justify-center w-full h-full bg-gray-200 text-gray-700">
-          {fallback ? fallback : 'N/A'}
+          {fallback}
         </div>
       )}
     </div>
   );
 };
 
-export default Avatar;
+const AvatarFallback: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <div className="flex items-center justify-center w-full h-full bg-gray-200 text-gray-700">
+      {children}
+    </div>
+  );
+};
+
+export { Avatar, AvatarFallback };

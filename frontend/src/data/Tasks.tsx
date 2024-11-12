@@ -1,4 +1,4 @@
-import { Task } from '@/types/dashboard';
+import {Task } from '@/types/dashboard';
 
 export const tasks: Task[] = [
   {

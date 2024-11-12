@@ -20,3 +20,11 @@ export interface QuickAction {
   icon: string;
   action: () => void;
 }
+
+export interface Task {
+  id: number;
+  title: string;
+  status: 'pending' | 'in-progress' | 'completed';
+  dueDate: string;
+  priority: 'high' | 'medium' | 'low';
+}

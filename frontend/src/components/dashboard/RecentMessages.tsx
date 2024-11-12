@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import  Avatar  from "@/components/ui/Avatar";
+import  { Avatar } from "@/components/ui/Avatar";
 import  Badge  from "@/components/ui/Badge";
 import { MessageCircle, Mail, Instagram } from 'lucide-react';
 
