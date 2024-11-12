@@ -1,5 +1,5 @@
 import React from 'react';
-import MainLayout from '@/components/MainLayout';
+import MainLayout from '@/components/layout/MainLayout';
 import { Card } from '@/components/ui/Card';
 import { Progress } from '@/components/ui/Progress';
 
