@@ -1,11 +1,18 @@
+
 // src/pages/index.tsx
 import React from 'react';
+import MainLayout from '@/components/MainLayout';
 
 const Home: React.FC = () => {
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-100">
-      <h1 className="text-3xl font-bold text-center">If you see this, the page is rendering properly!</h1>
-    </div>
+    <MainLayout>
+      <div className="flex h-screen items-center justify-center bg-gray-100">
+        <div className="text-center space-y-4">
+          <h1 className="text-4xl font-bold text-gray-900">Welcome to Moso Marketing</h1>
+          <p className="text-xl text-gray-600">Your Digital Marketing Solution</p>
+        </div>
+      </div>
+    </MainLayout>
   );
 };
 

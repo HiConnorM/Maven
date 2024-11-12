@@ -1,38 +1,24 @@
 {
   "compilerOptions": {
-    "target": "ES6", // Target ECMAScript 6 for better compatibility with browsers.
-    "module": "esnext", // Use ESNext for modern JavaScript module syntax.
-    "jsx": "preserve", // Enable support for React JSX.
-    "strict": true, // Enable all strict type-checking options.
-    "esModuleInterop": true, // Ease importing CommonJS modules.
-    "forceConsistentCasingInFileNames": true, // Enforce consistent casing in imports.
-    "skipLibCheck": true, // Skip type-checking .d.ts files for faster compilation.
-    "moduleResolution": "node", // Look for modules similar to Node.js resolution.
-    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export.
-    "baseUrl": "./", // Set base directory for imports.
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ] // Configure imports from the "src" directory.
+      "@/*": ["src/*"]
     },
-    "outDir": "./build" // Compiled output will go to the "build" directory.
-    ,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "build"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

@@ -55,8 +55,4 @@ export const CardContent = ({ children, className = "" }: CardContentProps) => {
 
 // Exporting all components for reuse
 export default {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
 };
