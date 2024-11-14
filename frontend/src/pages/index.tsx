@@ -1,7 +1,7 @@
 
 // src/pages/index.tsx
 import React from 'react';
-import MainLayout from '@/components/layout/MainLayout';
+import MainLayout from '@/components/layouts/MainLayout';
 
 const Home: React.FC = () => {
   return (

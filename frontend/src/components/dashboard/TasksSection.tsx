@@ -31,7 +31,7 @@ const TasksSection: React.FC = () => {
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle>Tasks</CardTitle>
-        <Button variant="ghost" size="sm">
+        <Button variant="ghost" size="small">
           <Plus className="h-4 w-4" />
         </Button>
       </CardHeader>

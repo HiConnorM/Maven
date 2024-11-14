@@ -6,20 +6,8 @@ import Input from "@/components/ui/Input";
 import { Avatar, AvatarFallback } from "@/components/ui/Avatar";
 import Badge from "@/components/ui/Badge";
 import { Progress } from "@/components/ui/Progress";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
-import { 
-  Home,
-  Calendar,
-  Users,
-  FileText,
-  BarChart2,
-  Settings,
-  HelpCircle,
-  LogOut,
-  Bell,
-  Search,
-} from "lucide-react";
-import DashboardLayout from '@/layouts/DashboardLayout';
+import { Search, Bell, ArrowUpRight } from "lucide-react";
+import DashboardLayout from '@/layout/DashboardLayout';
 import { appointments } from '@/data/Appointments';
 import { contentItems } from '@/data/contentItems';
 import { dashboardMetrics } from '@/data/Metrics';
@@ -55,9 +43,7 @@ export default function Dashboard() {
                 <span className="sr-only">Notifications</span>
               </Button>
               <Button variant="ghost" size="icon" className="rounded-full">
-                <Avatar className="h-8 w-8">
-                  <AvatarFallback>DS</AvatarFallback>
-                </Avatar>
+                <Avatar className="h-8 w-8" src="public/assets/images/avatar.png" alt="User Avatar" fallback={<AvatarFallback>DS</AvatarFallback>} />
               </Button>
             </div>
           </header>
@@ -127,7 +113,7 @@ export default function Dashboard() {
                           <p className="text-sm text-gray-500">{item.type}</p>
                         </div>
                         <div className="flex items-center">
-                          <Badge variant={item.status === 'Published' ? 'success' : 'warning'}>
+                          <Badge variant={item.status === 'Published' ? 'default' : 'outline'}>
                             {item.status}
                           </Badge>
                           <span className="text-sm text-gray-500 ml-2">{item.engagement}% engagement</span>
@@ -149,18 +135,17 @@ export default function Dashboard() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {/* Add your marketing campaigns here */}
                     <div className="flex items-center justify-between">
                       <p className="font-medium">Summer Wellness</p>
-                      <Badge variant="active">Active</Badge>
+                      <Badge variant="default">Active</Badge>
                     </div>
                     <div className="flex items-center justify-between">
                       <p className="font-medium">Mental Health Awareness</p>
-                      <Badge variant="planned">Planned</Badge>
+                      <Badge variant="default">Planned</Badge>
                     </div>
                     <div className="flex items-center justify-between">
                       <p className="font-medium">New Client Promo</p>
-                      <Badge variant="completed">Completed</Badge>
+                      <Badge variant="default">Completed</Badge>
                     </div>
                     <Button className="w-full mt-4" variant="outline">
                       Create New Campaign
